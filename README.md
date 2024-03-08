@@ -38,3 +38,15 @@ export default function Tomato() {
 # 첫 페이지는 app/page.tsx가 로딩됨
 npm run dev
 ```
+
+---
+
+# 라우팅
+
+## 파일시스템 기반 라우팅
+- 폴더 경로 아래에 page.tsx를 로딩, 없다면 404 응답
+  - 예) app/about-us/page.tsx -> /about-us
+  - 예) app/about-us/company/sales/page.tsx -> /about-us/company/sales
+- page.tsx 파일이 아닌 경우에는 폴더 경로가 있어서 처리하지 않음(404응답)
+  - 예) app/about-us/components/avatar.tsx
+
