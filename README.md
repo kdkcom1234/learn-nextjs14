@@ -81,7 +81,7 @@ import Link from "next/link";
   - (marketing)/blog -> /blog
   - (shop)/account -> /account
 
-# Dynamic Routes
+## Dynamic Routes
 
 - [매개변수명]형태의 폴더명으로 작성
 - movies/[id]/page.tsx
