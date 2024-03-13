@@ -81,6 +81,22 @@ import Link from "next/link";
   - (marketing)/blog -> /blog
   - (shop)/account -> /account
 
+# Dynamic Routes
+
+- [매개변수명]형태의 폴더명으로 작성
+- movies/[id]/page.tsx
+- {params: {매개변수1, 매개변수2... }} 형태의 props로 받을 수 있음
+
+```tsx
+export default function MovieDetailPage({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+  return <h1>Movie {id}</h1>;
+}
+```
+
 ---
 
 # Layout
