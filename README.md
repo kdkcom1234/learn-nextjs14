@@ -115,11 +115,7 @@ export default function MovieDetailPage({
 
 - RootLayout -> ChildLayout1 > ChildLayout2 .. -> Page
 
---
-
-# Metadata
-
-## metadata 오브젝트
+## Metadata
 
 - head영역에 들어가는 메타 태그 속성을 넣을 때 사용
 - Layout 또는 Page에 삽입가능
@@ -145,3 +141,9 @@ export const metadata: Metadata = {
   title: "About us",
 };
 ```
+
+---
+
+# Data Fetching
+
+- https://nomad-movies.nomadcoders.workers.dev/

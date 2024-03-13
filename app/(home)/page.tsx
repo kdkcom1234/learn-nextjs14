@@ -1,11 +1,19 @@
+import { json } from "stream/consumers";
+
 export const metadata = {
   title: "Home",
 };
 
-export default function HomePage() {
-  return (
-    <main>
-      <h1>Hello</h1>
-    </main>
-  );
+const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+
+async function getMovies() {
+  // URL이 변경되지 않으면, 첫번째 호출을 캐싱한 데이터를 사용.
+  const response = await fetch(URL);
+  // const response = await fetch(URL + "?t=" + new Date().getTime());
+  return response.json();
+}
+
+export default async function HomePage() {
+  const movies = await getMovies();
+  return <div>{JSON.stringify(movies)}</div>;
 }
