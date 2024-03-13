@@ -74,8 +74,12 @@ import Link from "next/link";
 ## Route Group
 
 - (루트명)의 형태로 폴더를 생성, 루트를 생성하지 않음
+- 논리적으로 경로를 그룹핑하기 위한 것
   https://nextjs.org/docs/app/building-your-application/routing/route-groups
--
+- 예)
+  - (marketing)/about -> /about
+  - (marketing)/blog -> /blog
+  - (shop)/account -> /account
 
 ---
 
