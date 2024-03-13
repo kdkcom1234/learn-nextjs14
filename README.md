@@ -70,3 +70,27 @@ npm run dev
 import Link from "next/link";
 <Link href="/about-us">About Us</Link>;
 ```
+
+## Route Group
+
+- (루트명)의 형태로 폴더를 생성, 루트를 생성하지 않음
+  https://nextjs.org/docs/app/building-your-application/routing/route-groups
+-
+
+---
+
+# Layout
+
+## RootLayout
+
+- app/layout.tsx 파일
+
+## ChildLayout
+
+- app/세부경로/layout.tsx 파일
+- 예) app/about-us/layout.tsx
+  - /about-us, /about-us/company 경로 모두 해당 레이아웃이 적용됨
+
+## Layout 중첩
+
+- RootLayout -> ChildLayout1 > ChildLayout2 .. -> Page
