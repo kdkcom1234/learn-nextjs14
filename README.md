@@ -147,3 +147,29 @@ export const metadata: Metadata = {
 # Data Fetching
 
 - https://nomad-movies.nomadcoders.workers.dev/
+
+## Server Side Fetching
+
+- API호출 함수를 바로 호출하여 바인딩, 서버 사이드에서 호출됨
+- URL이 변경되지 않으면 데이터가 캐시되어 다시 페이지에 왔을 때 이전 데이터가 보여짐
+
+```tsx
+async function getMovies() {
+  // URL이 변경되지 않으면, 첫번째 호출을 캐싱한 데이터를 사용.
+  // const response = await fetch(URL);
+  const response = await fetch(URL + "?t=" + new Date().getTime());
+  return response.json();
+}
+
+export default async function HomePage() {
+  const movies = await getMovies();
+  return <div>{JSON.stringify(movies)}</div>;
+}
+```
+
+## Loading Component
+
+- page 파일에 상응하는 경로에 loading.tsx를 추가함으로써 해당 페이지가 로딩 중일때 표시할 수 있음
+  - 예) (home)/page.tsx -> /
+  - (home)/loading.tsx -> / 경로가 로딩중일 때 페이지의 영역에 표시됨, 레이아웃영역은 바로 표시
+- page 컴포넌트가 async 함수여야함. 페이지외의 부분에 대해서 응답을 주고, 페이지 로딩이 끝나면 컨텐츠를 스트리밍함
