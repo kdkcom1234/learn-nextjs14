@@ -1,7 +1,11 @@
-import Navigation from "../../components/navigation";
+import { Metadata } from "next";
 import Avartar from "./components/avatar";
 
-export default function AboutUs() {
+export const metadata: Metadata = {
+  title: "About us",
+};
+
+export default function AboutUsPage() {
   return (
     <main>
       <h1>

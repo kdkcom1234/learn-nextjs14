@@ -98,3 +98,34 @@ import Link from "next/link";
 ## Layout 중첩
 
 - RootLayout -> ChildLayout1 > ChildLayout2 .. -> Page
+
+--
+
+# Metadata
+
+## metadata 오브젝트
+
+- head영역에 들어가는 메타 태그 속성을 넣을 때 사용
+- Layout 또는 Page에 삽입가능
+- RootLayout -> ChildLayout -> Page 순으로 병합됩니다.
+
+```tsx
+// app/layout
+export const metadata: Metadata = {
+  // 템플릿을 사용, 하위 경로에 metadata.title 문자열이 %s에 병합됨
+  title: { template: "%s | Next Movies", default: "Next Movies" },
+  description: "The best moviews on best framework",
+};
+
+// app/(home)/page.tsx
+// <title>Home | Next Movies</title>
+export const metadata: Metadata = {
+  title: "Home",
+};
+
+// app/about-us/page.tsx
+// <title>About us | Next Movies</title>
+export const metadata: Metadata = {
+  title: "About us",
+};
+```
