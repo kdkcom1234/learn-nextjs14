@@ -173,3 +173,35 @@ export default async function HomePage() {
   - 예) (home)/page.tsx -> /
   - (home)/loading.tsx -> / 경로가 로딩중일 때 페이지의 영역에 표시됨, 레이아웃영역은 바로 표시
 - page 컴포넌트가 async 함수여야함. 페이지외의 부분에 대해서 응답을 주고, 페이지 로딩이 끝나면 컨텐츠를 스트리밍함
+
+## Promise all
+
+- 병렬로 모든 promise 함수 실행, 모든 함수가 완료될 때 resolve
+
+```tsx
+const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)]);
+```
+
+## Suspense
+
+- 컴포넌트가 로딩 중일 때 fallback 컴포넌트를 보여줌
+
+```tsx
+// MovieDetailPage
+<Suspense fallback={<h1>Loading movie info</h1>}>
+  <MovieInfo id={id} />
+</Suspense>;
+
+// MovieInfo
+import { API_URL } from "../app/(home)/page";
+
+async function getMovie(id: string) {
+  const response = await fetch(`${API_URL}/${id}`);
+  return response.json();
+}
+
+export default async function MovieInfo({ id }: { id: string }) {
+  const movie = await getMovie(id);
+  return <h6>{JSON.stringify(movie)}</h6>;
+}
+```
