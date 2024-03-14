@@ -4,9 +4,8 @@ export const metadata = {
   title: "Home",
 };
 
-export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
-
 async function getMovies() {
+  const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
   // await new Promise((resolve) => setTimeout(resolve, 1000));
   // URL이 변경되지 않으면, 첫번째 호출을 캐싱한 데이터를 사용.
   // const response = await fetch(API_URL);

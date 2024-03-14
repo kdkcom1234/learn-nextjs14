@@ -1,5 +1,3 @@
-import { API_URL } from "../app/(home)/page";
-
 async function getVideos(id: string) {
   const response = await fetch(`${API_URL}/${id}/videos`);
   // throw new Error("something broke...");
