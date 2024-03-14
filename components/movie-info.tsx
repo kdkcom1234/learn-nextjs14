@@ -1,3 +1,5 @@
+import { API_URL } from "../constants";
+
 async function getMovie(id: string) {
   const response = await fetch(`${API_URL}/${id}`);
   return response.json();

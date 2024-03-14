@@ -1,3 +1,5 @@
+import { API_URL } from "../constants";
+
 async function getVideos(id: string) {
   const response = await fetch(`${API_URL}/${id}/videos`);
   // throw new Error("something broke...");
