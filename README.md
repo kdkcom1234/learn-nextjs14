@@ -142,6 +142,19 @@ export const metadata: Metadata = {
 };
 ```
 
+## Dynamic Metadata
+
+- generateMetadata 함수를 통해서 처리할 수 있음, 경로 매개변수 등도 페이지와 동일하게 받을 수 있다.
+
+```tsx
+export async function generateMetadata({ params: { id } }: IParams) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+  } as Metadata;
+}
+```
+
 ---
 
 # Data Fetching
