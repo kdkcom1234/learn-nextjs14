@@ -3,7 +3,7 @@
 // 초기 렌더링은 서버사이드에서 처리함
 "use client";
 
-import styles from "../styles/navigation.module.css";
+import styles from "./navigation.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

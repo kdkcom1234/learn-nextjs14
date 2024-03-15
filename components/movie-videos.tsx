@@ -1,10 +1,4 @@
-import { API_URL } from "../constants";
-
-async function getVideos(id: string) {
-  const response = await fetch(`${API_URL}/${id}/videos`);
-  // throw new Error("something broke...");
-  return response.json();
-}
+import { getVideos } from "../api";
 
 export default async function MovieVidoes({ id }: { id: string }) {
   const videos = await getVideos(id);

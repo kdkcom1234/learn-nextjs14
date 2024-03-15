@@ -1,0 +1,12 @@
+.nav {
+  background-color: red;
+  padding: 50px 100px;
+}
+/* css module에서는 클래스 또는 id 선택자에서 시작해야함 */
+.nav ul {
+  display: flex;
+}
+
+.nav li {
+  padding: 0 1.5rem;
+}
