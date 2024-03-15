@@ -1,0 +1,9 @@
+.movie a {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie img {
+  aspect-ratio: auto;
+}
+

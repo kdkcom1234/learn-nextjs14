@@ -1,0 +1,6 @@
+.main {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, auto));
+  gap: 20px;
+}
